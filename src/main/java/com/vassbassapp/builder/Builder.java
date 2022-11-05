@@ -1,7 +1,7 @@
 package com.vassbassapp.builder;
 
 public interface Builder {
-    void setLogin(String login);
-    void setPassword(String password);
-    void setTimestamp(Long timestamp);
+    Builder setLogin(String login);
+    Builder setPassword(String password);
+    Builder setTimestamp(Long timestamp);
 }

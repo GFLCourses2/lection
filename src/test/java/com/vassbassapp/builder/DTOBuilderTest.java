@@ -21,11 +21,14 @@ public class DTOBuilderTest {
         String password = "password";
         Long timestamp = 3L;
 
-        DTO expected = new DTO(login, password, timestamp);
+        DTO expected = new DTO();
+        expected.setLogin(login);
+        expected.setPassword(password);
+        expected.setTimestamp(timestamp);
 
-        builder.setLogin(login);
-        builder.setPassword(password);
-        builder.setTimestamp(timestamp);
+        builder.setLogin(login)
+                .setPassword(password)
+                .setTimestamp(timestamp);
 
         assertEquals(expected, builder.build());
     }

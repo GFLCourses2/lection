@@ -8,23 +8,30 @@ public class DefaultDTOBuilder implements DTOBuilder {
     private Long timestamp = 1L;
 
     @Override
-    public void setLogin(String login) {
+    public Builder setLogin(String login) {
         this.login = login;
+        return this;
     }
 
     @Override
-    public void setPassword(String password) {
+    public Builder setPassword(String password) {
         this.password = password;
+        return this;
     }
 
     @Override
-    public void setTimestamp(Long timestamp) {
+    public Builder setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
+        return this;
     }
 
     @Override
     public DTO build(){
-        return new DTO(login, password, timestamp);
+        DTO dto = new DTO();
+        dto.setLogin(login);
+        dto.setPassword(password);
+        dto.setTimestamp(timestamp);
+        return dto;
     }
     
 }
