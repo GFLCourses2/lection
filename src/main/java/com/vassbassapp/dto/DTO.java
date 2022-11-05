@@ -1,4 +1,4 @@
-package dto;
+package com.vassbassapp.dto;
 
 import java.util.Objects;
 
@@ -7,6 +7,14 @@ public class DTO {
     private String login;
     private String password;
     private Long timestamp;
+
+    public DTO(){}
+
+    public DTO(String login, String password, Long timestamp){
+        this.login = login;
+        this.password = password;
+        this.timestamp = timestamp;
+    }
 
     public void setLogin(String login) {
         this.login = login;
