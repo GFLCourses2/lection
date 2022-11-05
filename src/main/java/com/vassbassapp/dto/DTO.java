@@ -16,18 +16,6 @@ public class DTO {
         this.timestamp = timestamp;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setTimestamp(Long timestamp) {
-        this.timestamp = timestamp;
-    }
-
     public String getLogin() {
         return login;
     }
