@@ -1,5 +1,7 @@
 package com.example.solutions.patterns.builder.builders;
 
+import com.example.solutions.patterns.builder.BuildUser;
+
 public class ManualBuilder implements Builder {
 
     private String login;
@@ -19,5 +21,9 @@ public class ManualBuilder implements Builder {
     @Override
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public BuildUser getBuildUser() {
+        return new BuildUser(login, password, timestamp);
     }
 }

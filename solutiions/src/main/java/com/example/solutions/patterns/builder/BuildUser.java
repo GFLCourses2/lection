@@ -39,9 +39,9 @@ public class BuildUser {
     @Override
     public String toString() {
         return "BuildUser{" +
-                "login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", timestamp=" + timestamp +
+                "login = '" + login + '\'' +
+                ", password = '" + password + '\'' +
+                ", timestamp = " + timestamp +
                 '}';
     }
 }
