@@ -1,4 +1,4 @@
-package com.example.solutions.patterns.builder;
+package com.example.solutions.patterns.builder.builders;
 
 /**
  * Interface Builder provides all available stages configuration product
