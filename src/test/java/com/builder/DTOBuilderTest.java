@@ -1,9 +1,15 @@
-package main.java.com.builder;
+package test.java.com.builder;
 
+import main.java.com.builder.DTOBuilder;
+import main.java.com.builder.Director;
 import main.java.com.dto.DTO;
+import org.junit.jupiter.api.Test;
 
-public class BuilderApp {
-    public static void main(String[] args) {
+
+class DTOBuilderTest {
+
+    @Test
+    void testBuilder(){
         DTOBuilder builder = new DTOBuilder();
         Director director = new Director();
 
