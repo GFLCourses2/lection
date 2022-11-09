@@ -1,6 +1,4 @@
-package main.java.com.builder;
-
-import main.java.com.dto.DTO;
+package com.builder;
 
 public class Director {
     public  void createDTO(Builder builder){

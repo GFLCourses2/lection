@@ -1,4 +1,4 @@
-package main.java.com.facade.singletons;
+package com.facade.singletons;
 
 public class FirstSingleton {
     private static volatile FirstSingleton instance;

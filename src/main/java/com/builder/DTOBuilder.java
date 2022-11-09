@@ -1,6 +1,6 @@
-package main.java.com.builder;
+package com.builder;
 
-import main.java.com.dto.DTO;
+import com.dto.DTO;
 
 public class DTOBuilder implements Builder {
     private String login;

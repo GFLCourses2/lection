@@ -1,7 +1,7 @@
-package main.java.com.facade;
+package com.facade;
 
-import main.java.com.facade.singletons.FirstSingleton;
-import main.java.com.facade.singletons.SecondSingleton;
+import com.facade.singletons.FirstSingleton;
+import com.facade.singletons.SecondSingleton;
 
 public class SingletonsFacade implements Facade{
     private FirstSingleton firstSingleton;

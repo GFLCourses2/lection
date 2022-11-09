@@ -1,4 +1,4 @@
-package main.java.com.facade;
+package com.facade;
 
 public interface Facade {
     void callActions();

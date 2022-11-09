@@ -1,4 +1,4 @@
-package main.java.com.singleton;
+package com.singleton;
 
 public class Singleton {
     private static volatile Singleton instance;

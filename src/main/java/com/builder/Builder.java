@@ -1,4 +1,4 @@
-package main.java.com.builder;
+package com.builder;
 
 public interface Builder {
     void createLogin(String login);

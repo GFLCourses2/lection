@@ -1,8 +1,6 @@
-package test.java.com.builder;
+package com.builder;
 
-import main.java.com.builder.DTOBuilder;
-import main.java.com.builder.Director;
-import main.java.com.dto.DTO;
+import com.dto.DTO;
 import org.junit.jupiter.api.Test;
 
 

@@ -1,8 +1,8 @@
-package test.java.com.facade;
+package com.facade;
 
-import main.java.com.facade.SingletonsFacade;
-import main.java.com.facade.singletons.FirstSingleton;
-import main.java.com.facade.singletons.SecondSingleton;
+import com.facade.SingletonsFacade;
+import com.facade.singletons.FirstSingleton;
+import com.facade.singletons.SecondSingleton;
 import org.junit.jupiter.api.Test;
 
 class SingletonsFacadeTest {
