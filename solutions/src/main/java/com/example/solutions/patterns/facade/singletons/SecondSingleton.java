@@ -1,6 +1,6 @@
 package com.example.solutions.patterns.facade.singletons;
 
-public class SecondSingleton {
+public class SecondSingleton implements AbstractSecondSingleton {
 
     private static SecondSingleton secondSingletons;
 
