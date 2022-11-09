@@ -2,6 +2,9 @@ package com.vassbassapp.builder;
 
 import com.vassbassapp.dto.DTO;
 
+/**
+ * Realization of pattern Builder
+ */
 public class DefaultDTOBuilder implements DTOBuilder {
     private String login = "unknown";
     private String password = "1111";

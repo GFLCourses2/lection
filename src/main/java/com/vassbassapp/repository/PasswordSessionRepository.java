@@ -1,24 +1,16 @@
 package com.vassbassapp.repository;
 
+import java.io.Serializable;
+import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class SimplePasswordRepository implements PasswordRepository {
-    private static volatile SimplePasswordRepository instance;
-
+public class PasswordSessionRepository implements PasswordRepository, Serializable {
     private final Set<String> repo = new LinkedHashSet<>();
 
-    private SimplePasswordRepository(){}
-
-    public static SimplePasswordRepository getInstance(){
-        if (instance == null) {
-            synchronized (SimplePasswordRepository.class){
-                if (instance == null) {
-                    instance = new SimplePasswordRepository();
-                }
-            }
-        }
-        return instance;
+    @Override
+    public Collection<String> getAll() {
+        return repo;
     }
 
     @Override

@@ -5,19 +5,27 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class SimplePasswordRepositoryTest {
+public class PasswordSessionRepositoryTest {
 
     private PasswordRepository repository;
 
     @Before
-    public void clearRepository(){
-        repository = SimplePasswordRepository.getInstance();
-        repository.clear();
+    public void initRepository(){
+        repository = new PasswordSessionRepository();
     }
 
     @Test
-    public void testGetInstance(){
-        assertSame(repository, SimplePasswordRepository.getInstance());
+    public void testGetAll(){
+        String password1 = "password1";
+        String password2 = "password2";
+        String password3 = "password3";
+        String[] expected = new String[] {password1, password2, password3};
+
+        repository.add(password1);
+        repository.add(password2);
+        repository.add(password3);
+
+        assertArrayEquals(expected, repository.getAll().toArray(new String[0]));
     }
 
     @Test

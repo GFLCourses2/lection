@@ -2,6 +2,9 @@ package com.vassbassapp.dto;
 
 import java.util.Objects;
 
+/**
+ * Realization of pattern DTO
+ */
 public class DTO {
 
     private String login;

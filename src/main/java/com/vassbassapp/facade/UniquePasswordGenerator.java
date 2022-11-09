@@ -1,15 +1,23 @@
-package com.vassbassapp.proxy;
+package com.vassbassapp.facade;
 
 import com.vassbassapp.repository.PasswordRepository;
-import com.vassbassapp.repository.SimplePasswordRepository;
 import com.vassbassapp.service.Difficult;
 import com.vassbassapp.service.PasswordGenerator;
-import com.vassbassapp.service.SimplePasswordGenerator;
 
-public class SimplePasswordGeneratorSaver implements PasswordGenerator {
+import java.util.Collection;
 
-    private final PasswordGenerator generator = new SimplePasswordGenerator();
-    private final PasswordRepository repository = SimplePasswordRepository.getInstance();
+/**
+ * Realization of pattern Facade
+ */
+public class UniquePasswordGenerator implements PasswordGenerator {
+
+    private final PasswordGenerator generator;
+    private final PasswordRepository repository;
+
+    public UniquePasswordGenerator(PasswordGenerator generator, PasswordRepository repository) {
+        this.generator = generator;
+        this.repository = repository;
+    }
 
     @Override
     public String generatePassword(Difficult difficultyLevel) {
@@ -20,5 +28,9 @@ public class SimplePasswordGeneratorSaver implements PasswordGenerator {
         } else {
             return generatePassword(difficultyLevel);
         }
+    }
+
+    public Collection<String> getGeneratedPasswords() {
+        return repository.getAll();
     }
 }
