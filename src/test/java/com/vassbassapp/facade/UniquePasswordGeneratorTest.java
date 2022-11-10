@@ -1,6 +1,5 @@
-package com.vassbassapp.proxy;
+package com.vassbassapp.facade;
 
-import com.vassbassapp.facade.UniquePasswordGenerator;
 import com.vassbassapp.repository.PasswordSessionRepository;
 import com.vassbassapp.service.Difficult;
 import com.vassbassapp.service.SimplePasswordGenerator;
