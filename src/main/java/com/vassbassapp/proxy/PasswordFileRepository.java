@@ -71,7 +71,10 @@ public class PasswordFileRepository implements PasswordRepository {
         if (repositoryFile == null) repositoryFile = new File("repository.dat");
         if (repositoryFile.exists()) {
             try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(repositoryFile))) {
-                 return (PasswordSessionRepository) ois.readObject();
+                Object r = ois.readObject();
+                if (r instanceof PasswordSessionRepository) {
+                    return (PasswordSessionRepository) r;
+                }
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
