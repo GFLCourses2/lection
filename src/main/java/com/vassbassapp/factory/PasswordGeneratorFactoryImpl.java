@@ -8,6 +8,9 @@ import com.vassbassapp.service.Locale;
 import com.vassbassapp.service.PasswordGenerator;
 import com.vassbassapp.service.SimplePasswordGenerator;
 
+/**
+ * Realization of pattern factory
+ */
 public class PasswordGeneratorFactoryImpl implements PasswordGeneratorFactory {
     @Override
     public PasswordGenerator createSessionUniqueEnglishGenerator() {

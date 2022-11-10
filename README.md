@@ -15,3 +15,6 @@ Proxy :
 
 Facade :
 - facade.UniquePasswordGenerator
+
+Factory :
+- factory.PasswordGeneratorFactoryImpl
