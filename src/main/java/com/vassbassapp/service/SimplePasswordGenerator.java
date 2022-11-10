@@ -3,12 +3,20 @@ package com.vassbassapp.service;
 import java.util.Random;
 
 public class SimplePasswordGenerator implements PasswordGenerator {
-    private static final String ALPHABET = "0123456789" +
-            "abcdefghijklmnopqrstuvwxyz" +
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    private final Locale locale;
+
+    public SimplePasswordGenerator() {
+        locale = Locale.ENGLISH;
+    }
+
+    public SimplePasswordGenerator(Locale locale) {
+        this.locale = locale;
+    }
 
     @Override
     public String generatePassword(Difficult difficultyLevel) {
+        String alphabet = locale.getAlphabet();
         Random generator = new Random();
         StringBuilder builder = new StringBuilder();
 
@@ -19,7 +27,7 @@ public class SimplePasswordGenerator implements PasswordGenerator {
         };
 
         for (int i=0;i<length;i++){
-            builder.append(ALPHABET.charAt(generator.nextInt(0,ALPHABET.length())));
+            builder.append(alphabet.charAt(generator.nextInt(0,alphabet.length())));
         }
         return builder.toString();
     }

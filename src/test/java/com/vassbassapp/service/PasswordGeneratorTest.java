@@ -15,7 +15,7 @@ public class PasswordGeneratorTest {
     }
 
     @Test
-    public void testGeneratePassword() {
+    public void testGenerateEnglishPassword() {
         String easyPassword = passwordGenerator.generatePassword(Difficult.EASY);
         String mediumPassword = passwordGenerator.generatePassword(Difficult.MEDIUM);
         String hardPassword = passwordGenerator.generatePassword(Difficult.HARD);
