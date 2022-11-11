@@ -1,8 +1,8 @@
 package com.vassbassapp.facade;
 
 import com.vassbassapp.repository.PasswordSessionRepository;
-import com.vassbassapp.service.Difficult;
-import com.vassbassapp.service.SimplePasswordGenerator;
+import com.vassbassapp.service.paswordGenerator.Difficult;
+import com.vassbassapp.service.paswordGenerator.SimplePasswordGenerator;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

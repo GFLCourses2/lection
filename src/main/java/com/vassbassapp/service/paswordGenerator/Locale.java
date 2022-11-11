@@ -1,4 +1,4 @@
-package com.vassbassapp.service;
+package com.vassbassapp.service.paswordGenerator;
 
 public enum Locale {
     ENGLISH("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),

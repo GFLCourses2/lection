@@ -2,6 +2,9 @@ package com.vassbassapp.proxy;
 
 import com.vassbassapp.repository.PasswordRepository;
 import com.vassbassapp.repository.PasswordSessionRepository;
+import com.vassbassapp.service.publisherSubscriber.MessageManager;
+import com.vassbassapp.service.publisherSubscriber.MessagePublisher;
+import com.vassbassapp.service.publisherSubscriber.Title;
 
 import java.io.*;
 import java.util.Collection;
@@ -10,10 +13,11 @@ import java.util.Collection;
  * Singleton
  * Proxy
  */
-public class PasswordFileRepository implements PasswordRepository {
+public class PasswordFileRepository implements PasswordRepository, MessagePublisher {
     private static volatile PasswordFileRepository instance;
     private PasswordSessionRepository repo;
     private File repositoryFile;
+    private MessageManager messageManager;
 
     private PasswordFileRepository(){}
 
@@ -41,7 +45,13 @@ public class PasswordFileRepository implements PasswordRepository {
 
         if (repo.add(password)) {
             return saveRepoToFile(repo);
-        }else return false;
+        }else {
+            if (messageManager != null) {
+                messageManager.invoke(Title.MESSAGE,
+                        "The password has already been generated");
+            }
+            return false;
+        }
     }
 
     @Override
@@ -76,7 +86,7 @@ public class PasswordFileRepository implements PasswordRepository {
                     return (PasswordSessionRepository) r;
                 }
             } catch (IOException | ClassNotFoundException e) {
-                e.printStackTrace();
+                if (messageManager != null) messageManager.invoke(Title.ERROR, e.toString());
             }
         }
         return new PasswordSessionRepository();
@@ -90,10 +100,18 @@ public class PasswordFileRepository implements PasswordRepository {
                 repositoryFile.createNewFile();
             }
             oos.writeObject(repo);
+
+            if (messageManager != null) messageManager.invoke(Title.MESSAGE,
+                    "The password has been saved");
             return true;
         } catch (IOException e) {
-            e.printStackTrace();
+            if (messageManager != null) messageManager.invoke(Title.ERROR, e.toString());
             return false;
         }
+    }
+
+    @Override
+    public void setMessageManager(MessageManager manager) {
+        messageManager = manager;
     }
 }

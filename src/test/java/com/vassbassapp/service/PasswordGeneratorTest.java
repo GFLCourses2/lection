@@ -1,5 +1,8 @@
 package com.vassbassapp.service;
 
+import com.vassbassapp.service.paswordGenerator.Difficult;
+import com.vassbassapp.service.paswordGenerator.PasswordGenerator;
+import com.vassbassapp.service.paswordGenerator.SimplePasswordGenerator;
 import org.junit.Before;
 import org.junit.Test;
 

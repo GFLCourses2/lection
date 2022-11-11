@@ -1,6 +1,6 @@
 package com.vassbassapp.factory;
 
-import com.vassbassapp.service.PasswordGenerator;
+import com.vassbassapp.service.paswordGenerator.PasswordGenerator;
 
 public interface PasswordGeneratorFactory {
     PasswordGenerator createSessionUniqueEnglishGenerator();
