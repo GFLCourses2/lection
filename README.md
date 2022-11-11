@@ -31,3 +31,8 @@ Publisher/Subscriber :
 - facade.UniquePasswordGenerator
 - proxy.PasswordFileRepository
 - repository.PasswordSessionRepository
+
+Decorator :
+- decorator.PasswordRepositoryDecorator
+- decorator.ByteEncodePasswordRepository
+- decorator.ReversePasswordRepository
