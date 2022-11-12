@@ -22,8 +22,16 @@ public class ByteEncodePasswordRepository extends PasswordRepositoryDecorator {
 
     @Override
     public boolean add(String password) {
-        System.out.println(encode(password));
+        if (password == null) return false;
+
         return super.add(encode(password));
+    }
+
+    @Override
+    public boolean isExists(String password) {
+        if (password == null) return true;
+
+        return super.isExists(encode(password));
     }
 
     private String encode(String password) {
@@ -32,11 +40,6 @@ public class ByteEncodePasswordRepository extends PasswordRepositoryDecorator {
             e.append((char) (c ^ KEY));
         }
         return e.toString();
-    }
-
-    @Override
-    public boolean isExists(String password) {
-        return super.isExists(encode(password));
     }
 
     private Collection<String> decodeAll(Collection<String>passwords) {

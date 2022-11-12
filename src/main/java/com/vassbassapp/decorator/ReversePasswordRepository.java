@@ -20,12 +20,15 @@ public class ReversePasswordRepository extends PasswordRepositoryDecorator {
 
     @Override
     public boolean add(String password) {
-        System.out.println(reverse(password));
+        if (password == null) return false;
+
         return super.add(reverse(password));
     }
 
     @Override
     public boolean isExists(String password) {
+        if (password == null) return true;
+
         return super.isExists(reverse(password));
     }
 
