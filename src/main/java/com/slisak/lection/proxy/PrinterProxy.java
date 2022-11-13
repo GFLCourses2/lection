@@ -7,7 +7,7 @@ import com.slisak.lection.proxy.service.PrinterImpl;
  * Lazy init proxy
  */
 public class PrinterProxy implements Printer{
-    private Printer printer;
+    private static Printer printer;
 
     @Override
     public void print(String toPrint) {
