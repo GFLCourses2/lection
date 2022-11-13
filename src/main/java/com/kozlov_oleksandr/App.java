@@ -5,14 +5,26 @@ import com.kozlov_oleksandr.builder.ManualBuilder;
 import com.kozlov_oleksandr.builder.UserBuilder;
 import com.kozlov_oleksandr.dto.User;
 import com.kozlov_oleksandr.facade.FacadeSingleton;
+import com.kozlov_oleksandr.facade.FirstSingleton;
+import com.kozlov_oleksandr.facade.SecondSingleton;
+import com.kozlov_oleksandr.facade.ThirdSingleton;
+import com.kozlov_oleksandr.factory.AbstractFactory;
+import com.kozlov_oleksandr.factory.Factory;
 import com.kozlov_oleksandr.proxy.PrintParamProxy;
 
 public class App {
     public static void main(String[] args){
-
     }
 }
 
+//
+//         main of Factory
+//    Factory factory = new Factory();
+//        factory.create(FirstSingleton.class);
+//        factory.create(SecondSingleton.class);
+//        factory.create(ThirdSingleton.class);
+
+      //main of Proxy
 //    User user = new User("kozlov","123", 2L);
 //    PrintParamProxy proxy = new PrintParamProxy(user);
 //        proxy.print();
@@ -22,9 +34,6 @@ public class App {
 //    main of Facade
 //    FacadeSingleton facade = new FacadeSingleton();
 //        facade.show();
-
-
-
 
 
 //    main of Builder
